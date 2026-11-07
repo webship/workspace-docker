@@ -1,0 +1,46 @@
+{
+  "name": "@webship/workspace-docker",
+  "version": "1.0.0",
+  "description": "Docker Compose for Webship Workspace: the DOCKER menu on every project with a compose file (up, down, restart, ps, logs, a shell in the first service, pull, build), the up/down caption, the published port as the site link. A runtime of @webship/workspace-container.",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "private": true,
+  "license": "ISC",
+  "repository": "github:webship/workspace-docker",
+  "files": [
+    "dist/src",
+    "features",
+    "scripts",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "npm run build",
+    "test": "npm run build && node --test dist/tests/*.test.js",
+    "lint": "tsc -p tsconfig.json --noEmit"
+  },
+  "workspacePlugin": {
+    "name": "docker",
+    "label": "Docker Compose",
+    "typeActions": {
+      "docker": [
+        "sites",
+        "code"
+      ]
+    },
+    "scripts": {
+      "hostInstall": "scripts/host-install.sh"
+    },
+    "features": [
+      "features/docker.feature"
+    ]
+  },
+  "dependencies": {
+    "@webship/workspace-container": "github:webship/workspace-container#1.0.x"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@webship/workspace-plugin-api": "github:webship/workspace-plugin-api#1.0.x",
+    "typescript": "^5.9.0"
+  }
+}
