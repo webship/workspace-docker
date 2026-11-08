@@ -5,4 +5,4 @@ Feature: The Docker Compose plugin on a project row
   Scenario: The plugin is listed on the Plugins page
     Given I am on "/settings/plugins"
      Then I should see "Docker Compose"
-      And I should see "@webship/workspace-docker"
+      And I should see "@webship.co/workspace-docker"

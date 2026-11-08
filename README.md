@@ -1,9 +1,9 @@
-# @webship/workspace-docker
+# @webship.co/workspace-docker
 
 Docker Compose for the [Webship Workspace](https://github.com/webship/workspace) dashboard: the **DOCKER**
 menu on every project folder that carries a compose file (compose.yaml, docker-compose.yml and their variants), with the runtime's verbs as terminal sessions in
 the project, the up/down caption and the site link, and "Write a compose.yaml skeleton here" when a new folder is made.
-A runtime of [`@webship/workspace-container`](https://github.com/webship/workspace-container).
+A runtime of [`@webship.co/workspace-container`](https://github.com/webship/workspace-container).
 
 A project is a Docker Compose project when it carries `compose.yaml`, `compose.yml`, `docker-compose.yml` or `docker-compose.yaml`. The name is the file's `name:` or the folder; the site link is the first published port of the first service that has one. The dashboard container runs docker against the host's socket (Docker-outside-of-Docker), so the verbs act on the same daemon the host uses.
 
