@@ -1,6 +1,6 @@
 {
   "name": "@webship.co/workspace-docker",
-  "version": "1.0.0-beta1",
+  "version": "1.0.0-rc1",
   "description": "Docker Compose for Webship Workspace: the DOCKER menu on every project with a compose file (up, down, restart, ps, logs, a shell in the first service, pull, build), the up/down caption, the published port as the site link. A runtime of @webship.co/workspace-container.",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
@@ -38,11 +38,11 @@
     ]
   },
   "dependencies": {
-    "@webship.co/workspace-container": "^1.0.0-beta1"
+    "@webship.co/workspace-container": "^1.0.0-rc1"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
-    "@webship.co/workspace-plugin-api": "^1.0.0-beta1",
+    "@webship.co/workspace-plugin-api": "^1.0.0-rc1",
     "typescript": "^5.9.0"
   },
   "publishConfig": {
