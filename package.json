@@ -24,6 +24,14 @@
   "workspacePlugin": {
     "name": "docker",
     "label": "Docker Compose",
+    "needs": {
+      "commands": [
+        {
+          "command": "docker",
+          "hint": "https://docs.docker.com/engine/install/"
+        }
+      ]
+    },
     "typeActions": {
       "docker": [
         "sites",
