@@ -36,7 +36,7 @@ other entry opens a terminal session in the project's folder and runs one comman
 | **Restart** | `docker compose -f <file> restart` |
 | **Status (ps)** | `docker compose -f <file> ps` |
 | **Logs (follow)** | `docker compose -f <file> logs -f --tail=200` |
-| **Shell in the first service** | `docker compose -f <file> exec $(docker compose -f <file> config --services | head -1) sh` |
+| **Shell in the first service** | `docker compose -f <file> exec $(docker compose -f <file> config --services \| head -1) sh` |
 | **Pull images** | `docker compose -f <file> pull` |
 | **Build** | `docker compose -f <file> build` |
 | **Down and remove volumes (data is lost)** | `docker compose -f <file> down -v` |

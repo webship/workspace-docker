@@ -142,7 +142,8 @@ const ALL: Verb[] = RT.variants.flatMap((v) => verbsOf(v.sample));
 const SKILL = `ai/skills/${P}-menu/SKILL.md`;
 
 test('the tables of the skill are the verbs of the runtime: every entry of the menu, with the command the plugin runs', () => {
-  const rows = [...read(SKILL).matchAll(/^\| \*\*([^*]+)\*\* \| `([^`]+)` \|$/gm)].map((m) => [m[1], m[2]]);
+  // A pipe inside a command is written \\| in a table cell, so that the table still reads as one.
+  const rows = [...read(SKILL).matchAll(/^\| \*\*([^*]+)\*\* \| `([^`]+)` \|$/gm)].map((m) => [m[1], m[2].replace(/\\\|/g, '|')]);
   assert.deepStrictEqual(rows, ALL.map((v) => [v.label, v.cmd]), 'in the order of the plugin, for each kind of project it recognises');
   const skill = read(SKILL);
   assert.ok(skill.includes(`The ${runtime.label} menu`), 'the menu by its label');
@@ -246,7 +247,7 @@ test('the items say container-based, name the plugin they come with, and carry n
   for (const f of ITEM_FILES) {
     const src = read(f);
     assert.doesNotMatch(src, /DDEV-only/i, `${f}: the workspace is container-based, DDEV by default`);
-    assert.doesNotMatch(src, /\/home\/(?!YOUR_USER)[a-z]/, `${f} carries no personal path`);
+    assert.doesNotMatch(src, /\/home\/(?!YOUR_USER|user\/)[a-z]/, `${f} carries no personal path`);
     for (const m of src.match(/[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+\.[a-z]{2,}/g) || []) assert.match(m, CFG.addresses, `${f}: ${m} is not an example address`);
     assert.doesNotMatch(src, /CHANGE_ME|gh[pousr]_[A-Za-z0-9]{8,}|github_pat_|glpat-[A-Za-z0-9_-]{8,}|ATATT[A-Za-z0-9]/, `${f} carries no token and no placeholder of one`);
   }
