@@ -14,6 +14,12 @@ import { dockerRuntime } from './lib/runtime';
 
 export { dockerRuntime };
 
+/** The AI items the installer places: agents in ai-agents/, skills in ai-skills/, commands in ai-commands/, prompts in ai-prompts/. */
+export const AGENTS: string[] = ['docker-operator'];
+export const SKILLS: string[] = ['docker-menu'];
+export const AI_COMMANDS: string[] = ['docker-status'];
+export const PROMPTS: string[] = ['docker-up-and-check'];
+
 export function register(api: PluginApi): void {
   registerContainer(api, dockerRuntime);
 }

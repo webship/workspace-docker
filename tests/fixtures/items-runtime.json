@@ -1,0 +1,21 @@
+{
+  "variants": [
+    {
+      "title": "",
+      "sample": {
+        "file": "<file>",
+        "name": "<name>"
+      }
+    }
+  ],
+  "readonly": [
+    "status"
+  ],
+  "handover": [
+    "logs",
+    "shell"
+  ],
+  "export": "dockerRuntime",
+  "find": "ls compose.yaml compose.yml docker-compose.yml docker-compose.yaml 2>/dev/null",
+  "helper": []
+}
