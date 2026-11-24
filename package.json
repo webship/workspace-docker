@@ -1,6 +1,6 @@
 {
   "name": "@webship.co/workspace-docker",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Docker Compose for Webship Workspace: the DOCKER menu on every project with a compose file (up, down, restart, ps, logs, a shell in the first service, pull, build), the up/down caption, the published port as the site link. It carries its AI items, each placed in the workspace folder of its kind: an agent, a skill, a command and a prompt. A runtime of @webship.co/workspace-container.",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
